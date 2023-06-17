@@ -13,6 +13,15 @@ import java.util.concurrent.Callable;
 )
 public class App implements Callable<Integer> {
 
+    @CommandLine.Option(names = {"-f", "--format"}, description = "output format [default: stylish]")
+    String format;
+
+    @CommandLine.Parameters(index = "0", description = "path to first file")
+    String filepath1;
+
+    @CommandLine.Parameters(index = "1", description = "path to second file")
+    String filepath2;
+
     public static void main(String[] args) {
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);

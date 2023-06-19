@@ -49,7 +49,8 @@ public class App implements Callable<Integer> {
 
     private Map<String, String> getFileData(String filePath, ObjectMapper mapper) throws IOException {
         String fileContent = readFileContent(filePath);
-        return mapper.readValue(fileContent, new TypeReference<>() {});
+        return mapper.readValue(fileContent, new TypeReference<>() {
+        });
     }
 
     private String readFileContent(String filePath) throws IOException {

@@ -6,7 +6,7 @@ on:
       - '**'
       
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,3 +18,7 @@ jobs:
           distribution: 'temurin'
           
       - run: make build
+
+      - uses: paambaati/codeclimate-action@v3.0.0
+        env:
+          CC_TEST_REPORTER_ID: 6e30dcdc9346d82825aae469cf52ab5fd157c63f61ae1d55433cb28a40f8ab36

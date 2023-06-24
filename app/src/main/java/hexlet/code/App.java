@@ -47,13 +47,13 @@ public class App implements Callable<Integer> {
         return 0;
     }
 
-    private Map<String, String> getFileData(String filePath, ObjectMapper mapper) throws IOException {
+    private static Map<String, String> getFileData(String filePath, ObjectMapper mapper) throws IOException {
         String fileContent = readFileContent(filePath);
         return mapper.readValue(fileContent, new TypeReference<>() {
         });
     }
 
-    private String readFileContent(String filePath) throws IOException {
+    private static String readFileContent(String filePath) throws IOException {
         Path path = Paths.get(filePath).toAbsolutePath().normalize();
         if (!Files.exists(path)) {
             throw new FileNotFoundException("Not found file in path " + filePath);

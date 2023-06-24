@@ -2,3 +2,6 @@
 build:
 	./gradlew clean build
 
+report:
+	./gradlew jacocoTestReport
+

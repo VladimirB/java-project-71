@@ -16,9 +16,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-          
+
       - run: make build
 
       - uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: 6e30dcdc9346d82825aae469cf52ab5fd157c63f61ae1d55433cb28a40f8ab36
+        with:
+          coverageCommand: make report
+          coverageLocations: ${{github.workspace}}/build/reports/jacoco/test/jacocoTestReport.xml:jacoco

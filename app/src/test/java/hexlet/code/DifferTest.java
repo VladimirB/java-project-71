@@ -37,4 +37,14 @@ class DifferTest {
 
         assertTrue(diff.contains("- timeout: 20"));
     }
+
+    @Test
+    public void testParameterTheSameInBothFiles() {
+        var file1 = Map.of("timeout", "50");
+        var file2 = Map.of("timeout", "50");
+
+        var diff = Differ.generate(file1, file2);
+
+        assertTrue(diff.contains(" timeout: 50"));
+    }
 }

@@ -4,11 +4,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-public class Differ {
+public final class Differ {
 
     private static final String PREFIX_EMPTY = "   ";
     private static final String PREFIX_MINUS = " - ";
     private static final String PREFIX_PLUS = " + ";
+
+    private Differ() {
+
+    }
 
     public static String generate(Map<String, String> data1, Map<String, String> data2) {
         List<String> keys = Stream.concat(data1.keySet().stream(), data2.keySet().stream())

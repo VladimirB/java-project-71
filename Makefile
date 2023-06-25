@@ -1,5 +1,5 @@
 run-dist:
-	app/build/install/app/bin/app
+	app/build/install/app/bin/app $(FILE1) $(FILE2)
 
 .PHONY: build
 build:
